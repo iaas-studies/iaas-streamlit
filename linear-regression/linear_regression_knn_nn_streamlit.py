@@ -13,13 +13,16 @@ import matplotlib.pyplot as plt
 from sklearn.metrics import mean_absolute_error
 from sklearn.neighbors import KNeighborsRegressor
 from sklearn.linear_model import LinearRegression
+from pathlib import Path
 
 st.title("Visualisierung mit Prediction von unterschiedlichen Modellen")
 
 # Daten einlesen
 
 # Daten in ein DataFrame laden
-df = pd.read_csv("../datasets/possum.csv")
+csv_path = Path(__file__).parents[1] / 'datasets/possum.csv'
+
+df = pd.read_csv(csv_path)
 
 method = st.selectbox("Wähle ein Modell:", ["Lineare Regression", "KNN", "NN"])
 
