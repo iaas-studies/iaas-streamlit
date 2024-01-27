@@ -97,6 +97,7 @@ elif method == "k-Nearest Neighbors":
     # Vorhersage (Prediction) für die benutzerdefinierten x-Werte
     predicted_value = model.predict([[user_input_x1, user_input_x2]])
     plt.scatter(user_input_x1, predicted_value, color='green', marker='o', label='Erwarteter Wert', s=100)
+    plt.scatter(user_input_x2, predicted_value, color='green', marker='o', label='Erwarteter Wert', s=100)
 
     st.write("Die vorhergesagte {} für die eingegebenen {}-Werte ist: {}".format(y_column, [x_column, x_column_2], predicted_value[0]))
 
